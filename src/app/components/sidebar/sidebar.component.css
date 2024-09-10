@@ -1,15 +1,11 @@
 .hidden {
-  display: none; /* Hide the sidebar */
+  display: none; 
 }
 .mobile-hidden {
-  display: none; /* Also hide on mobile */
+  display: none; 
 }
 @media (min-width: 768px) {
   .mobile-hidden {
-    display: block; /* Show on larger screens */
+    display: block;
   }
-}
-
-.no-border {
-  border: none !important; /* Menghilangkan border */
 }

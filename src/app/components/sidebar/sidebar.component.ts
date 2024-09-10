@@ -10,11 +10,15 @@ import { Router } from '@angular/router';
 export class SidebarComponent implements OnInit {
   items: MenuItem[] | undefined;
   isMenuVisible: boolean = true;
+  isMenuVisibleSidebar: boolean = false;
   isMobile: boolean = window.innerWidth < 768;
+
+  sidebarVisible:boolean= true;
 
   constructor(private router: Router) {
     window.addEventListener('resize', () => {
       this.isMobile = window.innerWidth < 768;
+      console.log('constructor this.isMobile :>> ', this.isMobile);
     });
   }
 
@@ -51,14 +55,16 @@ export class SidebarComponent implements OnInit {
   }
 
   onMenuItemClick(event: any) {
-    console.log('asfasdf');
-    console.log(event.item.routerLink);
     if (event.item.routerLink) {
       this.router.navigate([event.item.routerLink]);
     }
   }
 
   toggleMenu() {
-    this.isMenuVisible = !this.isMenuVisible;
+    if (this.isMobile == true ){
+      this.isMenuVisibleSidebar = !this.isMenuVisibleSidebar;
+    }else{
+      this.isMenuVisible = !this.isMenuVisible;
+    }
   }
 }

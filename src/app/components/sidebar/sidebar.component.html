@@ -6,3 +6,15 @@
     class="no-border" 
   />
 </div>
+
+
+
+
+<p-sidebar [(visible)]="isMenuVisibleSidebar" [position]="'left'" [modal]="true">
+  <p-menu
+    [model]="items"
+    [style]="{ width: '200px', border: 'none' }"
+    (onItemClick)="onMenuItemClick($event)"
+    class="no-border"
+  />
+</p-sidebar> 

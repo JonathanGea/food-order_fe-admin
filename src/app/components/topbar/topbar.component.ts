@@ -18,14 +18,9 @@ export class TopbarComponent {
 
   sidebarVisible = false;
 
-  toggleSidebar() {
-    this.sidebarVisible = !this.sidebarVisible;
-  }
-
   @Output() menuToggle = new EventEmitter<void>();
 
   onMenuClick() {
-    console.log('Menu button clicked');
     this.menuToggle.emit(); // Emit an event to toggle the menu
   }
 }
