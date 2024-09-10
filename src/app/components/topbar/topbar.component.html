@@ -1,0 +1,17 @@
+<p-toolbar class="fixed top-0 w-full z-10 shadow-2">
+    <div class="p-toolbar-group-start">
+        <p-button icon="pi pi-bars" class="mr-2" (click)="onMenuClick()"></p-button>
+    </div>
+    <div class="p-toolbar-group-end">
+        <p-button icon="pi pi-user" class="mr-2" (click)="onUserClick()"></p-button>
+        <p-button icon="pi pi-cog" class="mr-2" (click)="onSettingsClick()"></p-button>
+    </div>
+</p-toolbar>
+
+<div class="p-d-flex p-jc-between p-ai-center p-shadow-2" style="height: 50px;">
+  <i class="pi pi-bars p-mr-2" (click)="toggleSidebar()"></i>
+  <div>
+    <i class="pi pi-user p-mr-2"></i>
+    <i class="pi pi-cog"></i>
+  </div>
+</div>

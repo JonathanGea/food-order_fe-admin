@@ -1,0 +1,8 @@
+<div class="card" [ngClass]="{'hidden': !isMenuVisible, 'mobile-hidden': isMobile}">
+  <p-menu
+    [model]="items"
+    [style]="{ width: '200px', border: 'none' }"
+    (onItemClick)="onMenuItemClick($event)"
+    class="no-border" 
+  />
+</div>

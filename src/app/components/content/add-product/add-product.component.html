@@ -1,0 +1,53 @@
+<!-- <p-button (onClick)="showDialog()" label="Show" /> -->
+<p-dialog header="Tambah Produk" [modal]="true" [(visible)]="visible" [style]="{ width: '40rem' }">
+  <div class="flex flex-wrap gap-3 mb-4">
+    <div class="flex-wrap m-2">
+      <label for="nama" class="font-bold block mb-2">Nama</label>
+      <input pInputText id="nama" />
+    </div>
+    <div class="flex-wrap m-2">
+      <label for="kategori" class="font-bold block mb-2">Kategori</label>
+      <p-dropdown
+        [options]="foods"
+        [(ngModel)]="selectedfoods"
+        optionLabel="name"
+        placeholder="Select a food kategori .........................."
+        [style]="{ width: '250px' }"
+      >
+      </p-dropdown>
+    </div>
+  </div>
+  <div class="flex-wrap m-2">
+    <label for="harga" class="font-bold block mb-2">Harga</label>
+    <input pInputText id="harga" type="number" />
+  </div>
+
+  <div class="flex-auto m-2">
+    <label for="gambar" class="font-bold block mb-2">Gambar</label>
+    <div class="my-4 flex justify-content-start">
+      <p-toast />
+      <p-fileUpload
+        mode="basic"
+        chooseLabel="Choose"
+        chooseIcon="pi pi-upload"
+        name="demo[]"
+        accept="image/*"
+        maxFileSize="1000000"
+      />
+    </div>
+  </div>
+
+  <div class="flex-auto m-2">
+    <label for="keterangan" class="font-bold block mb-2">Keterangan</label>
+    <textarea rows="5" cols="50" pInputTextarea [(ngModel)]="value">
+    </textarea>
+  </div>
+  <div class="flex-auto m-2">
+    <label for="status" class="font-bold block mb-2">Status</label>
+    <p-inputSwitch></p-inputSwitch>
+  </div>
+    <div class="flex justify-content-end gap-2">
+        <p-button label="Cancel" severity="secondary" (onClick)="visible = false" />
+        <p-button label="Save" (onClick)="visible = false" />
+    </div>
+</p-dialog>

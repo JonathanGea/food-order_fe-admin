@@ -1,0 +1,15 @@
+.hidden {
+  display: none; /* Hide the sidebar */
+}
+.mobile-hidden {
+  display: none; /* Also hide on mobile */
+}
+@media (min-width: 768px) {
+  .mobile-hidden {
+    display: block; /* Show on larger screens */
+  }
+}
+
+.no-border {
+  border: none !important; /* Menghilangkan border */
+}
