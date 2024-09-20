@@ -1,12 +1,10 @@
 export interface Product {
-    id?: string;
-    code?: string;
+    id?: number;
     name?: string;
+    urlImage?: string;
+    price: any;
     description?: string;
-    price?: number;
-    quantity?: number;
-    inventoryStatus?: string;
     category?: string;
-    image?: string;
-    rating?: number;
-}
+    categoryId?: string;
+    isActivated?: Boolean;
+  } 

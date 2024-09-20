@@ -24,7 +24,7 @@
         <th>Image</th>
         <th>Price</th>
         <th>Category</th>
-        <th>Reviews</th>
+        <th>description</th>
         <th>Status</th>
       </tr>
     </ng-template>
@@ -34,25 +34,29 @@
         <td>
           <img
             [src]="
-              'https://primefaces.org/cdn/primeng/images/demo/product/' +
-              product.image
+              product.urlImage
             "
             [alt]="product.name"
             width="100"
             class="shadow-4"
           />
         </td>
-        <td>{{ product.price | currency : "USD" }}</td>
+        <td>{{ product.price }}</td>
         <td>{{ product.category }}</td>
-        <td></td>
-        <td>
-          <p-tag
-            [value]="product.inventoryStatus"
-            [severity]="getSeverity(product.inventoryStatus)"
-          />
-        </td>
+        <td>{{ product.description }}</td>
+        <td><p-inputSwitch [(ngModel)]="product.isActivated" /></td>
       </tr>
     </ng-template>
+    <ng-template #noProducts>
+      <div class="text-center p-5">
+        <p>No products to display.</p>
+      </div>
+    </ng-template>
   </p-table>
+  <ng-template #noProducts>
+    <div class="text-center p-5">
+      <p>No products to display.</p>
+    </div>
+  </ng-template>
 </div>
-<app-add-product></app-add-product>
+<app-add-product (productAdded)="getProducts()"></app-add-product>

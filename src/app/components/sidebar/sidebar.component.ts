@@ -18,7 +18,6 @@ export class SidebarComponent implements OnInit {
   constructor(private router: Router) {
     window.addEventListener('resize', () => {
       this.isMobile = window.innerWidth < 768;
-      console.log('constructor this.isMobile :>> ', this.isMobile);
     });
   }
 

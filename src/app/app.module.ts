@@ -35,7 +35,7 @@ import { NotFoundComponent } from './page/not-found/not-found.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ScrollerModule } from 'primeng/scroller';
 import { MultiSelectModule } from "primeng/multiselect"; 
-
+import {ReactiveFormsModule} from '@angular/forms';
 
 const routes: Routes = [
   { path: 'login', component: NotFoundComponent },
@@ -64,6 +64,7 @@ const routes: Routes = [
   ],
   imports: [
     RouterModule.forRoot(routes),
+    ReactiveFormsModule,
     HttpClientModule,
     BrowserModule,
     DialogModule,
